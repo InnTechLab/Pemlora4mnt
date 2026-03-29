@@ -547,8 +547,6 @@
     function loadImage() {
       const img     = document.getElementById('floor-img');
       const overlay = document.getElementById('img-overlay');
-      const meta    = document.getElementById('img-meta');
-      
       img.style.display = 'none';
       overlay.style.display = 'flex';
       overlay.textContent = 'Loading diagram...';
@@ -561,7 +559,6 @@
     function imgLoaded() {
       document.getElementById('floor-img').style.display = 'block';
       document.getElementById('img-overlay').style.display = 'none';
-      document.getElementById('img-meta').textContent = 'Loaded ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     }
 
     function imgError() {
@@ -572,7 +569,6 @@
 
     function loadNote() {
       const box  = document.getElementById('note-content');
-      const meta = document.getElementById('note-meta');
       box.className = 'is-loading';
 
       // Fetch the note.txt from the same Netlify folder
@@ -581,7 +577,6 @@
         .then(text => {
           box.className = '';
           box.textContent = text.trim() || '(No notes yet)';
-          meta.textContent = 'Loaded ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         })
         .catch(() => {
           box.className = '';
