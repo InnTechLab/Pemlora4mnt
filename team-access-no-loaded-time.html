@@ -463,7 +463,7 @@
       </div>
     </div>
 
-    <p class="disclaimer">Preventive Maintenance Tracking Tool — For Internal Team Use Only</p>
+    <p class="disclaimer">Preventive Maintenance Tracking Tool — For Internal team use only</p>
 
   </div>
 
@@ -568,7 +568,7 @@
           img.onload = () => {
             img.style.display = 'block';
             overlay.style.display = 'none';
-            meta.textContent = 'Loaded ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            meta.textContent = '';
           };
           img.src = objectUrl;
         })
@@ -592,7 +592,7 @@
         .then(text => {
           box.className = '';
           box.textContent = text.trim() || '(No notes yet)';
-          meta.textContent = 'Loaded ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+          meta.textContent = '';
         })
         .catch(() => {
           box.className = '';
